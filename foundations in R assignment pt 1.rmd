@@ -52,6 +52,7 @@ print(penguins)
 
 7. Create a subset of data for Adelie penguins. 
 ```{r}
+library(dplyr)
 adeliepenguins <- penguins %>% filter (species=="Adelie")
 adeliepenguins
 ```
@@ -63,9 +64,9 @@ summary(adeliepenguins)
 
 8. Create a dataframe that contains penguins with a bill length greater than or equal to the average bill length. 
 ```{r}
-meanbill <- mean(penguins$bill_len, na.rm=TRUE)
+meanbill <- mean(penguins$bill_length_mm, na.rm=TRUE)
 meanbill
-supermeanbill <- penguins %>% filter(bill_len>=meanbill)
+supermeanbill <- penguins %>% filter(bill_length_mm>=meanbill)
 supermeanbill
 ```
 
